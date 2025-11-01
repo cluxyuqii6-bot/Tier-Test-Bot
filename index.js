@@ -45,14 +45,14 @@ client.once("clientReady", async () => {
 
 function createQueueEmbed() {
 		return new EmbedBuilder()
-				.setTitle("HVH CRYSTALS Tier Queue")
+				.setTitle("Crystals Queue")
 				.setDescription(
 						`**Tester**: ${testerID ? `<@${testerID}>` : "None"}\n\n` +
 						`**Queue**:\n` +
 						(usersInQueue.length > 0 ? usersInQueue.map((id,i) => `${i+1}. <@${id}>`).join("\n") : "No one in queue yet.")
 				)
 				.setColor(0xFF0000) 
-				.setFooter({ text: `Tester: ${testerID ? client.users.cache.get(testerID)?.username : "None"}` });
+                .setFooter({ text: "Queue" });
 }
 
 
@@ -76,7 +76,7 @@ async function updateTop1Channel(guild) {
 				]
 		});
 
-		await top1Channel.send({ content: `@everyone You are being tested!` });
+		await top1Channel.send({ content: `@everyone` });
 }
 
 // ---- SLASH COMMAND HANDLER ----
